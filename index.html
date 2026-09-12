@@ -4,12 +4,122 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NASA APOD — New Tab</title>
+    <title>Orbit</title>
   </head>
   <body>
-    <main id="app">
-      <!-- Everything inside #app is rendered by src/main.js -->
-    </main>
+    <!-- Full-page wallpaper layer, sits behind everything. Its background
+         is set by settings.js based on the chosen wallpaper preset. -->
+    <div id="background" aria-hidden="true"></div>
+
+    <div class="page">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">Orbit</span>
+        </div>
+
+        <form id="search-form" class="search-bar" role="search">
+          <label for="search-input" class="visually-hidden">Search the web</label>
+          <input
+            id="search-input"
+            type="text"
+            placeholder="Search the web"
+            autocomplete="off"
+          />
+          <button type="submit" aria-label="Search"></button>
+        </form>
+
+        <button
+          id="settings-open"
+          class="icon-button"
+          type="button"
+          aria-label="Open settings"
+          aria-expanded="false"
+        ></button>
+      </header>
+
+      <main class="layout">
+        <section class="hero">
+          <div class="hero-text">
+            <h1 id="greeting"></h1>
+            <p id="greeting-sub" class="hero-subtitle"></p>
+          </div>
+          <div class="hero-time">
+            <span id="clock" class="clock"></span>
+            <span id="date" class="date"></span>
+          </div>
+        </section>
+
+        <div class="columns">
+          <section class="apod-section card" id="apod-card" aria-live="polite">
+            <!-- filled in by components/apodCard.js -->
+          </section>
+
+          <div class="sidebar">
+            <section class="card links-card">
+              <h2 class="section-heading">Quick links</h2>
+              <div id="quick-links" class="quick-links"></div>
+            </section>
+
+            <section class="card links-card">
+              <h2 class="section-heading">Me</h2>
+              <div id="personal-links" class="personal-links"></div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div id="settings-backdrop" class="settings-backdrop" hidden></div>
+
+    <aside id="settings-panel" class="settings-panel card" hidden aria-label="Settings">
+      <div class="settings-header">
+        <h2>Settings</h2>
+        <button id="settings-close" class="icon-button" type="button" aria-label="Close settings"></button>
+      </div>
+
+      <div class="settings-body">
+        <fieldset class="setting-group">
+          <legend>Theme</legend>
+          <div class="theme-toggle">
+            <label>
+              <input type="radio" name="theme" value="dark" />
+              <span>Dark</span>
+            </label>
+            <label>
+              <input type="radio" name="theme" value="light" />
+              <span>Light</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="setting-group">
+          <label for="accent-input">Accent color</label>
+          <input id="accent-input" type="color" />
+        </div>
+
+        <div class="setting-group">
+          <label>Wallpaper</label>
+          <div id="wallpaper-swatches" class="wallpaper-swatches"></div>
+        </div>
+
+        <div class="setting-group">
+          <label for="transparency-input">Transparency</label>
+          <input id="transparency-input" type="range" min="20" max="100" step="5" />
+        </div>
+
+        <div class="setting-group">
+          <label for="blur-input">Blur</label>
+          <input id="blur-input" type="range" min="0" max="30" step="2" />
+        </div>
+
+        <div class="setting-group setting-group--row">
+          <label for="animations-input">Animations</label>
+          <input id="animations-input" type="checkbox" />
+        </div>
+      </div>
+    </aside>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

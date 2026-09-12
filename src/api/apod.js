@@ -1,9 +1,10 @@
-// src/apod.js
+// src/api/apod.js
 //
 // This file is responsible for ONE thing: talking to NASA's APOD API.
-// Keeping "fetch the data" separate from "show the data on screen" (see ui.js)
-// makes the code much easier to expand later — e.g. if you add caching,
-// a date picker, or switch to a different endpoint, you only touch this file.
+// Keeping "fetch the data" separate from "show the data on screen"
+// (see components/apodCard.js) makes the code much easier to expand later —
+// e.g. if you add caching, a date picker, or switch to a different endpoint,
+// you only touch this file.
 
 const APOD_ENDPOINT = "https://api.nasa.gov/planetary/apod";
 
@@ -45,3 +46,4 @@ export async function fetchApod() {
   const data = await response.json();
   return data;
 }
+
