@@ -12,7 +12,7 @@ dist
 dist-ssr
 *.local
 
-# Environment variables (contains your real NASA API key — never commit this)
+# Environment variables (contains your real NASA API key ,never commit this)
 .env
 
 # Editor directories and files

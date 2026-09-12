@@ -42,7 +42,7 @@
         <section class="hero">
           <div class="hero-text">
             <h1 id="greeting"></h1>
-            <p id="greeting-sub" class="hero-subtitle"></p>
+
           </div>
           <div class="hero-time">
             <span id="clock" class="clock"></span>
@@ -51,19 +51,28 @@
         </section>
 
         <div class="columns">
-          <section class="apod-section card" id="apod-card" aria-live="polite">
+          <section class="apod-section" aria-labelledby="apod-heading">
+            <h2 id="apod-heading" class="section-heading">NASA Astronomy Picture of the Day</h2>
+            <div id="apod-card" aria-live="polite">
             <!-- filled in by components/apodCard.js -->
+            </div>
           </section>
 
           <div class="sidebar">
-            <section class="card links-card">
+            <section class="links-card">
               <h2 class="section-heading">Quick links</h2>
               <div id="quick-links" class="quick-links"></div>
             </section>
 
-            <section class="card links-card">
-              <h2 class="section-heading">Me</h2>
+            <section class="links-card">
+              <h2 class="section-heading">GitHub</h2>
               <div id="personal-links" class="personal-links"></div>
+            </section>
+
+            <section class="links-card">
+              <h2 class="section-heading">Projects</h2>
+              <p class="section-note">Code and projects on GitHub.</p>
+              <div id="project-links" class="personal-links"></div>
             </section>
           </div>
         </div>

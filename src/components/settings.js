@@ -10,7 +10,7 @@ import { wallpapers, getWallpaperById } from "../data/wallpapers.js";
 
 /**
  * Applies a settings object to the live page. This is the ONLY function
- * that actually changes how Orbit looks based on settings — everything
+ * that actually changes how Orbit looks based on settings ,everything
  * else just decides *what* the settings should be.
  * @param {Object} settings
  */

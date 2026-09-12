@@ -2,7 +2,7 @@
 //
 // This file is responsible for ONE thing: reading and writing Orbit's
 // settings to localStorage. Nothing else in the app touches localStorage
-// directly — it always goes through here, so if you ever change how or
+// directly ,it always goes through here, so if you ever change how or
 // where settings are stored, this is the only file you'd need to edit.
 
 const STORAGE_KEY = "orbit-settings";
@@ -11,10 +11,10 @@ const STORAGE_KEY = "orbit-settings";
 // opens it (or if their saved settings ever get cleared/corrupted).
 export const DEFAULT_SETTINGS = {
   theme: "dark", // "dark" | "light"
-  accent: "#7c9eff",
-  wallpaper: "nebula", // matches an id in data/wallpapers.js
-  transparency: 60, // 0–100, controls glass panel opacity
-  blur: 16, // px, controls glass panel backdrop blur
+  accent: "#91afd0",
+  wallpaper: "midnight", // matches an id in data/wallpapers.js
+  transparency: 100, // 0–100, controls page background opacity
+  blur: 0, // px, controls page backdrop blur
   animations: true, // whether transitions/hover motion are enabled
 };
 
@@ -45,7 +45,7 @@ export function saveSettings(settings) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
   } catch {
     // Storage can fail (e.g. private browsing with storage disabled).
-    // Failing silently here is fine — Orbit just won't remember settings.
+    // Failing silently here is fine ,Orbit just won't remember settings.
     console.warn("Orbit: couldn't save settings to localStorage.");
   }
 }

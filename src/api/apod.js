@@ -15,7 +15,7 @@ const APOD_ENDPOINT = "https://api.nasa.gov/planetary/apod";
  *   Vite only exposes variables prefixed with VITE_ to client-side code,
  *   and it makes them available on the special `import.meta.env` object.
  * - We don't pass a `date` param, so NASA automatically returns TODAY's
- *   picture. That's what makes the app "auto-update" daily — there's no
+ *   picture. That's what makes the app "auto-update" daily ,there's no
  *   stored date anywhere, we just always ask for "today".
  *
  * @returns {Promise<Object>} the parsed JSON response from NASA

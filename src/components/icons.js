@@ -1,6 +1,6 @@
 // src/components/icons.js
 //
-// A tiny, hand-picked set of generic line icons (not brand logos — just
+// A tiny, hand-picked set of generic line icons (not brand logos ,just
 // simple shapes that suggest each platform, like a chat bubble for Discord).
 // Keeping icons as plain inline SVG means zero extra dependencies and full
 // control over styling via CSS (currentColor).

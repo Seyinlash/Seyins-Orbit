@@ -1,7 +1,7 @@
 // src/data/wallpapers.js
 //
 // A small set of preset background gradients for the settings panel.
-// Each one is just a CSS `background` value — to add a new wallpaper
+// Each one is just a CSS `background` value ,to add a new wallpaper
 // option later, add another object here and it'll automatically show
 // up as a choice in Settings (see components/settings.js).
 

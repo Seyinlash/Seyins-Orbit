@@ -8,7 +8,7 @@
 function getFormattedDate(dateString) {
   // NASA's response includes its own `date` field (YYYY-MM-DD) for the
   // picture shown, which is more accurate to display than "today" in case
-  // of timing edge cases around midnight — but it's always today's photo
+  // of timing edge cases around midnight ,but it's always today's photo
   // since we never request a specific date.
   const date = dateString ? new Date(`${dateString}T00:00:00`) : new Date();
   return date.toLocaleDateString(undefined, {
