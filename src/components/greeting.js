@@ -14,11 +14,11 @@ const SUBTITLES = [
 ];
 
 /**
- * Returns a greeting like "Good afternoon, Seyin" based on the current
+ * Returns a greeting like "Good afternoon" based on the current
  * local time.
- * @param {string} name
+
  */
-export function getGreeting(name) {
+export function getGreeting() {
   const hour = new Date().getHours();
   let timeOfDay;
 
@@ -27,7 +27,7 @@ export function getGreeting(name) {
   else if (hour < 18) timeOfDay = "Good afternoon";
   else timeOfDay = "Good evening";
 
-  return `${timeOfDay}, ${name}`;
+  return timeOfDay;
 }
 
 /**

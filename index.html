@@ -7,11 +7,7 @@
     <title>Orbit</title>
   </head>
   <body>
-    <!-- Full-page wallpaper layer, sits behind everything. Its background
-         is set by settings.js based on the chosen wallpaper preset. -->
-    <div id="background" aria-hidden="true"></div>
-
-    <div class="page">
+<div class="page">
       <header class="topbar">
         <div class="brand">
           <span class="brand-mark" aria-hidden="true"></span>
@@ -29,13 +25,7 @@
           <button type="submit" aria-label="Search"></button>
         </form>
 
-        <button
-          id="settings-open"
-          class="icon-button"
-          type="button"
-          aria-label="Open settings"
-          aria-expanded="false"
-        ></button>
+        <button id="theme-toggle" class="theme-toggle" type="button">Light mode</button>
       </header>
 
       <main class="layout">
@@ -79,56 +69,6 @@
       </main>
     </div>
 
-    <div id="settings-backdrop" class="settings-backdrop" hidden></div>
-
-    <aside id="settings-panel" class="settings-panel card" hidden aria-label="Settings">
-      <div class="settings-header">
-        <h2>Settings</h2>
-        <button id="settings-close" class="icon-button" type="button" aria-label="Close settings"></button>
-      </div>
-
-      <div class="settings-body">
-        <fieldset class="setting-group">
-          <legend>Theme</legend>
-          <div class="theme-toggle">
-            <label>
-              <input type="radio" name="theme" value="dark" />
-              <span>Dark</span>
-            </label>
-            <label>
-              <input type="radio" name="theme" value="light" />
-              <span>Light</span>
-            </label>
-          </div>
-        </fieldset>
-
-        <div class="setting-group">
-          <label for="accent-input">Accent color</label>
-          <input id="accent-input" type="color" />
-        </div>
-
-        <div class="setting-group">
-          <label>Wallpaper</label>
-          <div id="wallpaper-swatches" class="wallpaper-swatches"></div>
-        </div>
-
-        <div class="setting-group">
-          <label for="transparency-input">Transparency</label>
-          <input id="transparency-input" type="range" min="20" max="100" step="5" />
-        </div>
-
-        <div class="setting-group">
-          <label for="blur-input">Blur</label>
-          <input id="blur-input" type="range" min="0" max="30" step="2" />
-        </div>
-
-        <div class="setting-group setting-group--row">
-          <label for="animations-input">Animations</label>
-          <input id="animations-input" type="checkbox" />
-        </div>
-      </div>
-    </aside>
-
-    <script type="module" src="/src/main.js"></script>
+<script type="module" src="/src/main.js"></script>
   </body>
 </html>
