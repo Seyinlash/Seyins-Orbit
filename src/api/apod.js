@@ -1,7 +1,7 @@
 const APOD_ENDPOINT = "https://api.nasa.gov/planetary/apod";
 const RETRY_DELAYS = [1000, 2000];
 
-export async function fetchApod() {
+async function fetchLatestApod() {
   const apiKey = import.meta.env.VITE_NASA_API_KEY;
   if (!apiKey) {
     throw new Error("Missing NASA API key. Add VITE_NASA_API_KEY to your .env file.");
@@ -36,3 +36,46 @@ export async function fetchApod() {
   }
 }
 
+const CACHE_KEY = "orbit-apod-last-success";
+
+// Store only APOD display data, never the API key or request URL.
+function displayData(data) {
+  if (!data || typeof data.title !== "string" ||
+      typeof data.explanation !== "string" ||
+      !/^\d{4}-\d{2}-\d{2}$/.test(data.date) ||
+      !Number.isFinite(new Date(data.date + "T00:00:00").getTime()) ||
+      !["image", "video"].includes(data.media_type)) {
+    throw new Error("NASA returned an incomplete picture. Please try again later.");
+  }
+  const mediaUrl = new URL(data.url);
+  if (mediaUrl.protocol !== "https:" && mediaUrl.protocol !== "http:") {
+    throw new Error("NASA returned an unsupported media address.");
+  }
+  return {
+    title: data.title,
+    explanation: data.explanation,
+    date: data.date,
+    media_type: data.media_type,
+    url: mediaUrl.href,
+  };
+}
+
+export async function fetchApod() {
+  try {
+    const data = displayData(await fetchLatestApod());
+    try {
+      localStorage.setItem(CACHE_KEY, JSON.stringify(data));
+    } catch {
+      // A full or blocked browser store must not hide a successful response.
+    }
+    return data;
+  } catch (error) {
+    try {
+      const saved = JSON.parse(localStorage.getItem(CACHE_KEY));
+      return { ...displayData(saved), isCached: true };
+    } catch {
+      // No usable saved result: keep the original, key-free error message.
+      throw error;
+    }
+  }
+}
