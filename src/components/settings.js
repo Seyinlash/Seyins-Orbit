@@ -1,6 +1,6 @@
 import { loadSettings, saveSettings } from "../utils/storage.js";
 
-// Keep the existing module; appearance now has just one preference.
+// ui now has just one preference.
 export function initThemeToggle(button) {
   let { theme } = loadSettings();
 

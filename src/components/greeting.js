@@ -1,10 +1,3 @@
-// src/components/greeting.js
-//
-// This file is responsible for ONE thing: the greeting text at the top
-// of Orbit. The main greeting is based on the time of day; the smaller
-// subtitle underneath is picked randomly each time the page loads, just
-// to keep the new-tab page feeling a little alive.
-
 const SUBTITLES = [
   "Here's what's happening today.",
   "Ready when you are.",

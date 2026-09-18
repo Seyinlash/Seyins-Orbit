@@ -5,7 +5,7 @@ export const DEFAULT_SETTINGS = { theme: "dark" };
 export function loadSettings() {
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-    // Retain the old theme preference and ignore retired customization fields.
+    // Retains the old theme preference and ignore retired customization fields.
     return { theme: saved?.theme === "light" ? "light" : "dark" };
   } catch {
     return { ...DEFAULT_SETTINGS };

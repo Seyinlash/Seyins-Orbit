@@ -1,8 +1,6 @@
-// src/components/search.js
-//
-// This file is responsible for ONE thing: the search bar. Submitting it
+// This file is for the search bar. Submitting it
 // opens a Google search for whatever was typed, in a new tab, so Orbit
-// itself never navigates away.
+// itself never closes.
 
 export function initSearch(formEl, inputEl) {
   formEl.addEventListener("submit", (event) => {

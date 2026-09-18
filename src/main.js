@@ -1,9 +1,5 @@
-// src/main.js
-//
-// This is Orbit's entry point (loaded by index.html). Its job is to grab
-// the DOM elements each component needs and hand them off — all the real
-// logic lives in src/components/, src/api/, and src/utils/. Keeping this
-// file thin makes it easy to see, at a glance, everything Orbit does.
+// This is Orbit's entry point
+// all the logic lives in src/components/, src/api/, and src/utils/.
 
 import "./style.css";
 
@@ -51,8 +47,7 @@ function initLinks() {
 }
 
 function initIcons() {
-  // A few buttons are icon-only; fill them in with our inline SVGs here
-  // rather than hardcoding SVG markup in index.html.
+  // A few buttons are icons
   document.querySelector("#search-form button[type='submit']").innerHTML =
     icon("search", 16);
 }

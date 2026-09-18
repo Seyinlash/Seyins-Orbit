@@ -1,9 +1,3 @@
-// src/components/clock.js
-//
-// This file is responsible for ONE thing: keeping the clock and date
-// display up to date. It ticks once a second ,cheap enough that it
-// won't affect performance, and it means the seconds hand feels "live"
-// rather than static.
 
 /**
  * Starts the live clock/date display and keeps it updating forever

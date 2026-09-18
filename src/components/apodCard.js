@@ -1,6 +1,6 @@
 // src/components/apodCard.js
 //
-// This file is responsible for ONE thing: rendering the NASA APOD card —
+// This file is responsible for ONE thing: rendering the NASA APOD card -
 // its loading state, its error state, and the final result (including the
 // expand/collapse behavior for the explanation text). It never fetches
 // data itself; main.js calls fetchApod() and hands the result here.

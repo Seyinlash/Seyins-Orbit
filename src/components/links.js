@@ -1,13 +1,11 @@
-// src/components/links.js
-//
-// This file is responsible for ONE thing: turning link data (from
+// This file is  for turning link data (from
 // data/links.js) into clickable cards in the DOM. It doesn't know or
 // care what the links actually are ,edit data/links.js to change them.
 
 import { icon } from "./icons.js";
 
 /**
- * Renders a row of compact "quick link" pills.
+ * shows a row of compact "quick link" pills.
  * @param {HTMLElement} container
  * @param {Array<{label: string, url: string, icon: string}>} links
  */
@@ -25,7 +23,7 @@ export function renderQuickLinks(container, links) {
 }
 
 /**
- * Renders the personal/social links list.
+ * shows the personal/social links list.
  * @param {HTMLElement} container
  * @param {Array<{label: string, url: string, icon: string}>} links
  */

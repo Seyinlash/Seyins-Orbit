@@ -1,4 +1,4 @@
-// Edit these lists to change Orbit's links. Icons live in components/icons.js.
+// Edit these lists to change Orbit's links.
 export const quickLinks = [
   { label: "Gmail", url: "https://mail.google.com", icon: "mail" },
   { label: "Drive", url: "https://drive.google.com", icon: "folder" },
@@ -9,6 +9,4 @@ export const personalLinks = [
   { label: "Seyinlash", url: "https://github.com/Seyinlash", icon: "code" },
 ];
 
-// Add real projects here as { label, url, icon: "code" } objects.
-// Until then, the Projects section links to the GitHub profile.
 export const projects = [];
